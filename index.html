@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>唯品TOP款一览</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <h1>唯品TOP款一览</h1>
+      <p class="update-time" id="updateTime">数据更新时间：2026-10-12</p>
+      <p class="update-note">排名变化 = 全局排名变化（非筛选后排名变化）</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 周期切换 -->
+    <nav class="period-tabs" role="tablist">
+      <button class="tab-btn" data-period="ytd" role="tab">年至今</button>
+      <button class="tab-btn" data-period="30d" role="tab">近30天</button>
+      <button class="tab-btn active" data-period="7d" role="tab" aria-selected="true">近7天</button>
+    </nav>
+
+    <!-- 性别切换 -->
+    <nav class="gender-tabs" role="tablist">
+      <button class="gender-btn active" data-gender="female" role="tab" aria-selected="true">女鞋 TOP100</button>
+      <button class="gender-btn" data-gender="male" role="tab">男鞋 TOP100</button>
+    </nav>
+
+    <!-- 筛选栏 -->
+    <section class="filter-panel" aria-label="筛选条件">
+      <div class="filter-head">
+        <h2>筛选条件</h2>
+        <div class="filter-actions">
+          <button id="btnConfirm" type="button" class="btn-confirm">确认筛选</button>
+          <button id="btnReset" type="button" class="btn-reset">重置全部</button>
+        </div>
+      </div>
+
+      <div class="filter-grid">
+        <div class="filter-item">
+          <label>品牌</label>
+          <div class="ms-wrap" id="msBrand"></div>
+        </div>
+        <div class="filter-item">
+          <label>一级品类</label>
+          <div class="ms-wrap" id="msCat1"></div>
+        </div>
+        <div class="filter-item">
+          <label>二级品类</label>
+          <div class="ms-wrap" id="msCat2"></div>
+        </div>
+        <div class="filter-item">
+          <label>三级品类</label>
+          <div class="ms-wrap" id="msCat3"></div>
+        </div>
+        <div class="filter-item">
+          <label>四级品类</label>
+          <div class="ms-wrap" id="msCat4"></div>
+        </div>
+        <div class="filter-item">
+          <label>件单价区间</label>
+          <div class="ms-wrap" id="msPrice"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 结果统计 -->
+    <div class="result-bar">
+      <span id="resultCount">共 <strong>0</strong> 款商品</span>
+      <span id="resultHint"></span>
+    </div>
+
+    <!-- 商品卡片网格 -->
+    <section class="card-grid" id="cardGrid" aria-label="商品列表"></section>
+
+    <!-- 空状态 -->
+    <div id="emptyState" class="empty-state" hidden>
+      <p>😕 没有符合条件的商品</p>
+      <p class="empty-sub">试试放宽或重置筛选条件</p>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    唯品TOP款一览 · 近7天数据
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
